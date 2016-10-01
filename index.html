@@ -11,16 +11,34 @@
 
     <h1>{{message}}</h1>
 
-    {{username}}
-    <form name="searchUser">
-        <input type="search" placeholder="Username to find" ng-model="username" />
-        <input type="submit" value="Search" ng-click="search(username)" />
+    <h1>{{error}}</h1>
+
+    <form name="searchUser" ng-submit="search(username)">
+        <input type="search" required placeholder="Username to find" ng-model="username" />
+        <input type="submit" value="Search" />
     </form>
 
     <div>
         <h2>{{user.name}}</h2>
         <img ng-src = {{user.avatar_url}}" title="{{user.name}}">
     </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Stars</th>
+                <th>Language</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="repo in repos">
+                <td>{{repo.name}}</td>
+                <td>{{repo.stargazers_count | number}}</td>
+                <td>{{repo.language}}</td>
+            </tr>
+        </tbody>
+    </table>
 
 
 </body>
