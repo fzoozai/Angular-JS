@@ -27,8 +27,8 @@
                     .then(onUserComplete, onError);
             };
 
-            $http.get("http://api.github.com/users/angular")
-                .then(onUserComplete);
+/*            $http.get("http://api.github.com/users/angular")
+                .then(onUserComplete);*/
 
             /*Default values for the form*/
             $scope.username = "angular";
